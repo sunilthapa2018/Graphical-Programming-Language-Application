@@ -171,7 +171,7 @@
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear All";
             this.btnClear.UseVisualStyleBackColor = true;
-            
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // cboSize
             // 
@@ -181,7 +181,7 @@
             this.cboSize.Name = "cboSize";
             this.cboSize.Size = new System.Drawing.Size(121, 21);
             this.cboSize.TabIndex = 2;
-            
+            this.cboSize.SelectedIndexChanged += new System.EventHandler(this.cboSize_SelectedIndexChanged);
             // 
             // btnChooseColor
             // 
@@ -194,7 +194,7 @@
             this.btnChooseColor.Size = new System.Drawing.Size(67, 62);
             this.btnChooseColor.TabIndex = 1;
             this.btnChooseColor.UseVisualStyleBackColor = false;
-            
+            this.btnChooseColor.Click += new System.EventHandler(this.btnChooseColor_Click);
             // 
             // btnCircle
             // 
@@ -207,7 +207,7 @@
             this.btnCircle.Size = new System.Drawing.Size(27, 23);
             this.btnCircle.TabIndex = 0;
             this.btnCircle.UseVisualStyleBackColor = true;
-            
+            this.btnCircle.Click += new System.EventHandler(this.btnCircle_Click);
             // 
             // btnTriangle
             // 
@@ -220,7 +220,7 @@
             this.btnTriangle.Size = new System.Drawing.Size(27, 23);
             this.btnTriangle.TabIndex = 0;
             this.btnTriangle.UseVisualStyleBackColor = true;
-            
+            this.btnTriangle.Click += new System.EventHandler(this.btnTriangle_Click);
             // 
             // btnRectangle
             // 
@@ -233,7 +233,7 @@
             this.btnRectangle.Size = new System.Drawing.Size(27, 23);
             this.btnRectangle.TabIndex = 0;
             this.btnRectangle.UseVisualStyleBackColor = true;
-            
+            this.btnRectangle.Click += new System.EventHandler(this.btnRectangle_Click);
             // 
             // btnEraser
             // 
@@ -246,7 +246,7 @@
             this.btnEraser.Size = new System.Drawing.Size(27, 23);
             this.btnEraser.TabIndex = 0;
             this.btnEraser.UseVisualStyleBackColor = true;
-            
+            this.btnEraser.Click += new System.EventHandler(this.btnEraser_Click);
             // 
             // btnPen
             // 
@@ -259,7 +259,7 @@
             this.btnPen.Size = new System.Drawing.Size(27, 23);
             this.btnPen.TabIndex = 0;
             this.btnPen.UseVisualStyleBackColor = true;
-            
+            this.btnPen.Click += new System.EventHandler(this.btnPen_Click);
             // 
             // panelPaint
             // 
@@ -269,7 +269,10 @@
             this.panelPaint.Name = "panelPaint";
             this.panelPaint.Size = new System.Drawing.Size(1900, 567);
             this.panelPaint.TabIndex = 0;
-            
+            this.panelPaint.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelPaint_MouseClick);
+            this.panelPaint.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelPaint_MouseDown);
+            this.panelPaint.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelPaint_MouseMove);
+            this.panelPaint.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelPaint_MouseUp);
             // 
             // btnClearAll
             // 
@@ -340,7 +343,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MsPaint";
             this.Text = "MS PAINT";
-            
+            this.Load += new System.EventHandler(this.MsPaint_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
