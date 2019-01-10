@@ -1,7 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 
 namespace Paint
 {    
@@ -15,10 +21,15 @@ namespace Paint
         int mouseX, mouseY = 0;
         Boolean moving = false;
         Pen pen;
-        String active = "pen";        
-           
-
+        String active = "pen";
+        OpenFileDialog openFile = new OpenFileDialog();
+        String line = "";
         
+
+        public int raduis = 0;
+        public int width = 0;
+        public int height = 0;
+        public int counter = 0;
         public MsPaint()
         {
             InitializeComponent();
@@ -200,9 +211,47 @@ namespace Paint
                 g.FillEllipse(myBrush, e.X - size / 2, e.Y - size / 2, size, size);
                 
             }
-        }       
+        }
 
-        
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            if (openFile.ShowDialog() == DialogResult.OK) {
+                txtCommand.Clear();
+                line = "";
+                StreamReader sr = new StreamReader(openFile.FileName);
+                while (line != null) {
+                    line = sr.ReadLine();
+                    if (line != null) {                        
+                        txtCommand.Text += line;
+                        txtCommand.Text += "\r\n";
+                    }
+                }
+            }
+        }
+
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            txtCommand.Text = "";
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text File | *.txt";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK) {
+                using (Stream s = File.Open(saveFileDialog.FileName, FileMode.CreateNew))
+                using (StreamWriter sw = new StreamWriter(s)) {
+                    sw.Write(txtCommand.Text);
+                }
+                MessageBox.Show("Your File has been saved Sucessfully");
+            }
+            
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            
+        }
 
         private void panelPaint_MouseMove(object sender, MouseEventArgs e)
         {

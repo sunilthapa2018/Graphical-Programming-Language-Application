@@ -283,7 +283,7 @@
             this.btnClearAll.TabIndex = 4;
             this.btnClearAll.Text = "ClearAll";
             this.btnClearAll.UseVisualStyleBackColor = true;
-            
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
             // btnOpen
             // 
@@ -294,7 +294,7 @@
             this.btnOpen.TabIndex = 3;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
-            
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSave
             // 
@@ -305,7 +305,7 @@
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnRun
             // 
@@ -316,7 +316,7 @@
             this.btnRun.TabIndex = 1;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
-            
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // txtCommand
             // 
