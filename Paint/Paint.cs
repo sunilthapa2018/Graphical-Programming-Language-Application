@@ -24,7 +24,7 @@ namespace Paint
         String active = "pen";
         OpenFileDialog openFile = new OpenFileDialog();
         String line = "";
-        
+        Validation validate;
 
         public int raduis = 0;
         public int width = 0;
@@ -243,14 +243,21 @@ namespace Paint
                 using (StreamWriter sw = new StreamWriter(s)) {
                     sw.Write(txtCommand.Text);
                 }
-                MessageBox.Show("Your File has been saved Sucessfully");
             }
-            
+            MessageBox.Show("Your File has been saved Sucessfully");
         }
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            
+            if (txtCommand.Text != null && txtCommand.Text != "") {
+                validate = new Validation(txtCommand);
+                if (!validate.isSomethingInvalid)
+                {
+                    MessageBox.Show("Everything is working fine");
+                    
+                }
+
+            }
         }
 
         private void panelPaint_MouseMove(object sender, MouseEventArgs e)
