@@ -4,26 +4,30 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Paint
-{    
-    class Validation
-    {
-        
+{
+    /// <summary>
+    /// Validation Class
+    /// </summary>
+    public class Validation
+    {        
         private TextBox txtCommand;
-        private Boolean isValidCommand = true;
+        /// <summary>The isValidCommand saves if a command is valid or not</summary>
+        public Boolean isValidCommand = true;
+        /// <summary>The isSomethingInvalid saves if anyone command is valid</summary>
         public Boolean isSomethingInvalid = false;
-        public int Raduis = 0;
-        public int Width = 0;
-        public int Height = 0;
-        public int counter = 0;
-        public int LoopCounter = 0;
+        /// <summary>The lineNumber saves linenumber of a command</summary>
         public int lineNumber = 0;
+        /// <summary>They saves if a lines of command has hasloop</summary>
+        public Boolean hasLoop;
+        /// <summary>They saves if a lines of command has hasEndLoop</summary>
+        public Boolean hasEndLoop;
+        /// <summary>They saves if a lines of command has hasIf</summary>
+        public Boolean hasIf;
+        /// <summary>They saves if a lines of command has hasEndif</summary>
+        public Boolean hasEndif;
 
-        public Boolean hasLoop = false;
-        public Boolean hasEndLoop = false;
-        public Boolean hasIf = false;
-        public Boolean hasEndif = false;
-
-        public int loopLineNo = 0, endLoopLineNo = 0, ifLineNo = 0, endIfLineNo = 0;
+        int loopLineNo = 0, endLoopLineNo = 0, ifLineNo = 0, endIfLineNo = 0;
+        /// constructor of Validation class
         public Validation(TextBox txtCommand)
         {
             this.txtCommand = txtCommand;
@@ -51,7 +55,12 @@ namespace Paint
             }     
         }
 
-        private void checkLoopAndIfValidation()
+        /// <summary>
+        /// To check if loop is valid
+        /// </summary>
+
+        //this function checks if loop is valid
+        public void checkLoopAndIfValidation()
         {
             int numberOfLines = txtCommand.Lines.Length;
             
@@ -137,11 +146,16 @@ namespace Paint
             }
         }
 
-        private void checkLineValidation(string lineOfCommand)
+        /// <summary>
+        /// To check validation of a single line of command
+        /// </summary>
+        /// /// <param name="lineOfCommand"></param>
+        //this function checks validation of a single line of command
+        public void checkLineValidation(string lineOfCommand)
         {
             String[] keyword = { "circle", "rectangle", "triangle", "polygon", "drawto", "moveto", "repeat", "if", "endif", "loop", "endloop" };
             String[] shapes = {"circle","rectangle", "triangle", "polygon"};
-            String[] variable = { "radius", "width", "height", "counter"};
+            String[] variable = { "radius", "width", "height", "counter", "size"};
             lineOfCommand = Regex.Replace(lineOfCommand, @"\s+", " ");
             string[] words = lineOfCommand.Split(' ');
             //removing white spaces in between words
@@ -163,14 +177,16 @@ namespace Paint
                             if (!isInt)
                             {
                                 //if it isnot variable then invalid
-                                Boolean isVariable = variable.Contains(words[1]);
+                                Boolean isVariable = variable.Contains(words[1].ToLower());
                                 if (isVariable)
                                 {
                                     checkIfVariableDefined(words[1]);
                                 }
                                 else {
                                     isValidCommand = false;
-                                }
+                                    throw new NonDigitValueException("The value is not numerical \r\n It is not an error but just showing custom made exception.");
+                                }                       
+
                             }
                         }
                         else {
@@ -179,12 +195,12 @@ namespace Paint
                     }
                     else if (words[0].ToLower().Equals("rectangle"))
                     {
-                        String args = lineOfCommand.Substring(9, (lineOfCommand.Length-9));                        
+                        String args = lineOfCommand.Substring(9, (lineOfCommand.Length - 9));
                         String[] parms = args.Split(',');
-                        
+
                         if (parms.Length == 2)
                         {
-                            Boolean isInt = false; 
+                            Boolean isInt = false;
                             for (int i = 0; i < parms.Length; i++)
                             {
                                 parms[i] = parms[i].Trim();
@@ -192,13 +208,13 @@ namespace Paint
                                 if (!isInt)
                                 {
                                     //if it isnot variable then invalid
-                                    Boolean isVariable = variable.Contains(parms[i]);
+                                    Boolean isVariable = variable.Contains(parms[i].ToLower());
                                     if (!isVariable)
                                     {
                                         isValidCommand = false;
                                     }
                                 }
-                            }                            
+                            }
                         }
                         else {
                             isValidCommand = false;
@@ -250,8 +266,8 @@ namespace Paint
                             isValidCommand = false;
                         }
                     }
-                    else {}
-                }else if (firstWord.Equals("loop")) {
+                    else { }
+                } else if (firstWord.Equals("loop")) {
                     if (words.Length == 2)
                     {
                         Boolean isInt = words[1].All(char.IsDigit);
@@ -280,10 +296,10 @@ namespace Paint
                 }
                 else if (firstWord.Equals("repeat"))
                 {
-                    if (words.Length >= 4 && words.Length <=6)
+                    if (words.Length >= 4 && words.Length <= 6)
                     {
                         Boolean isInt = words[1].All(char.IsDigit);
-                        if (isInt){
+                        if (isInt) {
                             if (shapes.Contains(words[2].ToLower()))
                             {
 
@@ -352,12 +368,12 @@ namespace Paint
                                                     isValidCommand = false;
                                                 }
                                             }
-                                        }                                        
+                                        }
                                     }
                                 }
                             }
                         }
-                        
+
                     }
                     else
                     {
@@ -387,39 +403,6 @@ namespace Paint
                         else { isValidCommand = false; }
 
                     }
-                    /*else if (words.Length == 8)
-                    {
-                        if (variable.Contains(words[1].ToLower()))
-                        {
-                            if (words[2].Equals("="))
-                            {
-                                Boolean isInt = words[3].All(char.IsDigit);
-                                if (isInt)
-                                {
-                                    if (words[4].ToLower().Equals("then"))
-                                    {
-                                        if (variable.Contains(words[5].ToLower()))
-                                        {
-                                            if (words[6].Equals("=") || words[6].Equals("+")) {
-                                                Boolean isInt3 = words[7].All(char.IsDigit);
-                                                if (isInt3) {
-
-                                                }
-                                                else { isValidCommand = false; }
-                                            }
-                                            else { isValidCommand = false; }
-                                        }
-                                        else { isValidCommand = false; }
-                                    }
-                                    else { isValidCommand = false; }
-                                }
-                                else { isValidCommand = false; }
-                            }
-                            else { isValidCommand = false; }
-                        }
-                        else { isValidCommand = false; }
-
-                    }*/
                     else
                     {
                         isValidCommand = false;
@@ -429,6 +412,27 @@ namespace Paint
                 else if (firstWord.Equals("endif"))
                 {
                     if (words.Length != 1)
+                    {
+                        isValidCommand = false;
+                    }
+                } else if (firstWord.Equals("drawto") || firstWord.Equals("moveto")) {
+                    String args = lineOfCommand.Substring(6, (lineOfCommand.Length - 6));
+                    String[] parms = args.Split(',');
+
+                    if (parms.Length == 2)
+                    {
+                        Boolean isInt = false;
+                        for (int i = 0; i < parms.Length; i++)
+                        {
+                            parms[i] = parms[i].Trim();
+                            isInt = parms[i].All(char.IsDigit);
+                            if (!isInt)
+                            {
+                                isValidCommand = false;
+                            }
+                        }
+                    }
+                    else
                     {
                         isValidCommand = false;
                     }
@@ -512,7 +516,12 @@ namespace Paint
 
         }
 
-        private void checkIfVariableDefined(string variable)
+        /// <summary>
+        /// To check if variable is defined or not
+        /// </summary>
+        /// /// <param name="variable"></param>
+        //this function checks if variable is defined or not
+        public void checkIfVariableDefined(string variable)
         {
             Boolean isVaraibleFound = false;
             if (txtCommand.Lines.Length > 1)

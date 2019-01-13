@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paint", "Paint\Paint.csproj", "{B1D692A6-8539-40A4-9BF2-027B7E57A714}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaintTests", "PaintTests\PaintTests.csproj", "{3333E568-7909-40D7-A103-74DE2FFF434A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B1D692A6-8539-40A4-9BF2-027B7E57A714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1D692A6-8539-40A4-9BF2-027B7E57A714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1D692A6-8539-40A4-9BF2-027B7E57A714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3333E568-7909-40D7-A103-74DE2FFF434A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3333E568-7909-40D7-A103-74DE2FFF434A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3333E568-7909-40D7-A103-74DE2FFF434A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3333E568-7909-40D7-A103-74DE2FFF434A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

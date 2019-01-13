@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Paint</name>
+    </assembly>
+    <members>
+        <member name="M:Paint.Circle.Draw(System.Drawing.Graphics)">
+            <summary>
+            to draw circle 
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:Paint.Circle.SetParam(System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.Color)">
+            <summary>
+            parameter to draw circle
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="color"></param>        
+        </member>
+        <member name="T:Paint.MsPaint">
+            <summary>
+            MsPaint Class
+            </summary>
+        </member>
+        <member name="F:Paint.MsPaint.radius">
+            <summary>The Name property represents the employee's name.</summary>
+            <value>The Name property gets/sets the value of the string field, radius.</value>
+        </member>
+        <member name="F:Paint.MsPaint.width">
+            <summary>The Name property represents the employee's name.</summary>
+            <value>The Name property gets/sets the value of the string field, radius.</value>
+        </member>
+        <member name="F:Paint.MsPaint.height">
+            <summary>The Name property represents the employee's name.</summary>
+            <value>The Name property gets/sets the value of the string field, radius.</value>
+        </member>
+        <member name="F:Paint.MsPaint.dSize">
+            <summary>The Name property represents the employee's name.</summary>
+            <value>The Name property gets/sets the value of the string field, radius.</value>
+        </member>
+        <member name="F:Paint.MsPaint.counter">
+            <summary>The Name property represents the employee's name.</summary>
+            <value>The Name property gets/sets the value of the string field, radius.</value>
+        </member>
+        <member name="M:Paint.MsPaint.#ctor">
+            <summary>
+            Constructor of MsPaint
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <summary>
+            function key pressed event
+            </summary>
+            <param name="msg"></param>
+            <param name="keyData"></param>
+        </member>
+        <member name="M:Paint.MsPaint.addPenSizes">
+            <summary>
+            To add pen size in dropdownbox
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.addDrawingSizes">
+            <summary>
+            To add drawing size in dropdownbox
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.btnChooseColor_Click(System.Object,System.EventArgs)">
+            <summary>
+            to open color dialog
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnPen_Click(System.Object,System.EventArgs)">
+            <summary>
+            to select pen for drawing
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnEraser_Click(System.Object,System.EventArgs)">
+            <summary>
+            to select eraser for drawing
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnRectangle_Click(System.Object,System.EventArgs)">
+            <summary>
+            to select rectangle for drawing
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnTriangle_Click(System.Object,System.EventArgs)">
+            <summary>
+            to select triangle for drawing
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnCircle_Click(System.Object,System.EventArgs)">
+            <summary>
+            to select circle for drawing
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnPolygon_click(System.Object,System.EventArgs)">
+            <summary>
+            to select polygon for drawing
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.setAllBorderColorForButtons">
+            <summary>
+            to set border color
+            </summary>        
+        </member>
+        <member name="M:Paint.MsPaint.removeAllBorderFromButtons">
+            <summary>
+            to remove border size
+            </summary> 
+        </member>
+        <member name="M:Paint.MsPaint.panelPaint_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            mouseDown event for x and y axis
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.panelPaint_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            drawing shapes from draging option into panel 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.panelPaint_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            mousemove event to draw line
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.cboSize_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            to set color and size
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnClear_Click(System.Object,System.EventArgs)">
+            <summary>
+            to clear panel paint
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.panelPaint_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            to draw something
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnOpen_Click(System.Object,System.EventArgs)">
+            <summary>
+            to open a dialogbox to select a file to open
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnClearAll_Click(System.Object,System.EventArgs)">
+            <summary>
+            to clear a textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            to open a dialogbox to save a file
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.btnRun_Click(System.Object,System.EventArgs)">
+            <summary>
+            to run command and draw something
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Paint.MsPaint.loadCommand">
+            <summary>
+            to load the command
+            </summary>        
+        </member>
+        <member name="M:Paint.MsPaint.RunCommand(System.String)">
+            <summary>
+            to run the command written in textfield
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.GetSize(System.String)">
+            <summary>
+            to get the value of parameters of different shapes and return that value
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.sendDrawCommand(System.String)">
+            <summary>
+            to send command to draw particular object
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.GetEndifEndLineNumber">
+            <summary>
+            to get line number of endif
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.GetIfStartLineNumber">
+            <summary>
+            to get line number of if
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.GetLoopEndLineNumber">
+            <summary>
+            to get line number of endloop
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.GetLoopStartLineNumber">
+            <summary>
+            to get line number of loop
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.DrawPolygon(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            to draw polygon with 4 sides
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.DrawPolygon(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            to draw polygon with 5 sides
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.DrawTriangle(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            to draw triangle
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.DrawRectangle(System.Int32,System.Int32)">
+            <summary>
+            to draw regtangle
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.DrawCircle(System.Int32)">
+            <summary>
+            to draw circle
+            </summary>
+        </member>
+        <member name="F:Paint.MsPaint.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Paint.MsPaint.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Paint.MsPaint.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Paint.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:Paint.Rectangles.Draw(System.Drawing.Graphics)">
+            <summary>
+            draw rectangle
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:Paint.Rectangles.SetParam(System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.Color)">
+            <summary>
+            parameter for rectangle with color
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="color"></param>
+        </member>
+        <member name="T:Paint.Validation">
+            <summary>
+            Validation Class
+            </summary>
+        </member>
+        <member name="F:Paint.Validation.isValidCommand">
+            <summary>The isValidCommand saves if a command is valid or not</summary>
+        </member>
+        <member name="F:Paint.Validation.isSomethingInvalid">
+            <summary>The isSomethingInvalid saves if anyone command is valid</summary>
+        </member>
+        <member name="F:Paint.Validation.lineNumber">
+            <summary>The lineNumber saves linenumber of a command</summary>
+        </member>
+        <member name="F:Paint.Validation.hasLoop">
+            <summary>They saves if a lines of command has hasloop</summary>
+        </member>
+        <member name="F:Paint.Validation.hasEndLoop">
+            <summary>They saves if a lines of command has hasEndLoop</summary>
+        </member>
+        <member name="F:Paint.Validation.hasIf">
+            <summary>They saves if a lines of command has hasIf</summary>
+        </member>
+        <member name="F:Paint.Validation.hasEndif">
+            <summary>They saves if a lines of command has hasEndif</summary>
+        </member>
+        <member name="M:Paint.Validation.#ctor(System.Windows.Forms.TextBox)">
+            constructor of Validation class
+        </member>
+        <member name="M:Paint.Validation.checkLoopAndIfValidation">
+            <summary>
+            To check if loop is valid
+            </summary>
+        </member>
+        <member name="M:Paint.Validation.checkLineValidation(System.String)">
+            <summary>
+            To check validation of a single line of command
+            </summary>
+            /// <param name="lineOfCommand"></param>
+        </member>
+        <member name="M:Paint.Validation.checkIfVariableDefined(System.String)">
+            <summary>
+            To check if variable is defined or not
+            </summary>
+            /// <param name="variable"></param>
+        </member>
+        <member name="T:Paint.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Paint.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Paint.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Paint.Properties.Resources.eraser">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Paint.Properties.Resources.pen">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>
